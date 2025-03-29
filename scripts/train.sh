@@ -113,7 +113,7 @@ Results_model_epochs_20_logint_50_emsize_100_nhid_100_drop_05
 model_epochs_20_logint_50_emsize_100_nhid_100_drop_05
 
 #NOTE - model_epochs_5_logint_61_emsize_20_nhid_20_drop_05
-<<model_epochs_5_logint_10_emsize_20_nhid_20_drop_05
+<<model_epochs_5_logint_61_emsize_20_nhid_20_drop_05
 (cd $tools/pytorch-examples/word_language_model &&
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/creature \
         --epochs 5 \
