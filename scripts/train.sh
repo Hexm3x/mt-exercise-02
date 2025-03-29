@@ -16,7 +16,7 @@ SECONDS=0
 
 # Trained with the default value
 #NOTE - model_epochs_40_logint_100_emsize_200_nhid_200_drop_05
-<<model_epochs_40_logint_100_emsize_200_nhid_200_drop_05
+#<<model_epochs_40_logint_100_emsize_200_nhid_200_drop_05
 (cd $tools/pytorch-examples/word_language_model &&
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/creature \
         --epochs 40 \
@@ -35,7 +35,7 @@ SECONDS=0
 time taken:
 2604 seconds
 Results_model_epochs_40_logint_100_emsize_200_nhid_200_drop_05
-model_epochs_40_logint_100_emsize_200_nhid_200_drop_05
+#model_epochs_40_logint_100_emsize_200_nhid_200_drop_05
 
 #NOTE - training with different hyperparameter settings (epochs, log intervals, emsize, nhid)
 # To enable the training with different hyperparameters, comment out the "<<[name]" and the "[name]"
@@ -113,7 +113,7 @@ Results_model_epochs_20_logint_50_emsize_100_nhid_100_drop_05
 model_epochs_20_logint_50_emsize_100_nhid_100_drop_05
 
 #NOTE - model_epochs_5_logint_61_emsize_20_nhid_20_drop_05
-#<<model_epochs_5_logint_10_emsize_20_nhid_20_drop_05
+<<model_epochs_5_logint_61_emsize_20_nhid_20_drop_05
 (cd $tools/pytorch-examples/word_language_model &&
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/creature \
         --epochs 5 \
@@ -132,7 +132,7 @@ model_epochs_20_logint_50_emsize_100_nhid_100_drop_05
 time taken:
 182 seconds
 Results_model_epochs_5_logint_61_emsize_20_nhid_20_drop_05
-#model_epochs_5_logint_61_emsize_20_nhid_20_drop_05
+model_epochs_5_logint_61_emsize_20_nhid_20_drop_05
 
 # NOTE - echo
 echo "time taken:"
