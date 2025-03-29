@@ -1,0 +1,1 @@
+/mnt/c/Users/Dieb/Desktop/saydawalder_mt_exercise_02/mt-exercise-02/tools/pytorch-examples/word_language_model/data/wikitext-2/train.txt
