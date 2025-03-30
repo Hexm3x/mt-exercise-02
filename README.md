@@ -56,5 +56,5 @@ I created:
 data (with folder creature, grimm (these all contain a "raw" folder (with the raw text, the preprocessed one and the cleaned version) and test, train and valid file), wikitext-2 (in "data/wikitext-2" and in "/pytorch-examples/word_language_model/data/wikitext-2" you can see the example data) )
 models (with the file that got generated after "./scripts/train.sh" was run)
 samples (with the files that got generated after "./scripts/generate.sh" was run)
-alt_models (with the files that got generated after "./scripts/train.sh" was run - for my own, to understand the code a bit better)
-alt_samples (with the files that got generated after "./scripts/generate.sh" was run - for my own, to understand the code a bit better)
+alt_models (with the files that got generated after "./scripts/train.sh" was run and were not necessary - for my own, to understand the code a bit better - I made the folder manually and manually took in all files)
+alt_samples (with the files that got generated after "./scripts/generate.sh" was run and were not necessary - for my own, to understand the code a bit better - I made the folder manually and manually took in all files)
