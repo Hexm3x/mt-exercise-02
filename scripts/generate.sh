@@ -8,11 +8,67 @@ data=$base/data
 tools=$base/tools
 samples=$base/samples
 
+Task_2_models=$base/Task_2_models
+Task_2_samples=$base/Task_2_samples
+
 mkdir -p $samples
+
+mkdir -p $Task_2_samples
 
 num_threads=4
 device=""
 
+# Task 2
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
+        --data $data/creature \
+        --words 100 \
+        --checkpoint $Task_2_models/GRU_drop_00.pt \
+        --outf $Task_2_samples/Lowest_test_ppl_100_words.txt
+)
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
+        --data $data/creature \
+        --words 100 \
+        --checkpoint $Task_2_models/RNN_TANH_drop_00.pt \
+        --outf $Task_2_samples/Highest_test_ppl_100_words.txt
+)
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
+        --data $data/creature \
+        --words 300 \
+        --checkpoint $Task_2_models/GRU_drop_00.pt \
+        --outf $Task_2_samples/Lowest_test_ppl_300_words.txt
+)
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
+        --data $data/creature \
+        --words 300 \
+        --checkpoint $Task_2_models/RNN_TANH_drop_00.pt \
+        --outf $Task_2_samples/Highest_test_ppl_300_words.txt
+)
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
+        --data $data/creature \
+        --words 500 \
+        --checkpoint $Task_2_models/GRU_drop_00.pt \
+        --outf $Task_2_samples/Lowest_test_ppl_500_words.txt
+)
+
+(cd $tools/pytorch-examples/word_language_model &&
+    CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
+        --data $data/creature \
+        --words 500 \
+        --checkpoint $Task_2_models/RNN_TANH_drop_00.pt \
+        --outf $Task_2_samples/Highest_test_ppl_500_words.txt
+)
+
+<<Task1
+# Task 1
 # To enable the individual generation, comment out the "<<[name]" and the "[name]"
 # this ensures that the model will take a shorter time span (not generating different files at once)
 # Generated with the default value
@@ -106,20 +162,14 @@ device=""
 #NOTE - generating with different hyperparameter settings (epochs, log intervals, emsize, nhid)
 # To enable the generation with different hyperparameters, comment out the "<<[name]" and the "[name]"
 # To not get confused with the submitted files, I made an alternative folder for my experimentation
-<<alt_samples
-alt_models=$base/alt_models
-alt_samples=$base/alt_samples
-
-mkdir -p $alt_samples
-alt_samples
 
 <<model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperature_1
 (cd $tools/pytorch-examples/word_language_model &&
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
         --data $data/creature \
         --words 100 \
-        --checkpoint $alt_models/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05.pt \
-        --outf $alt_samples/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperature_1.txt
+        --checkpoint $models/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05.pt \
+        --outf $samples/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperature_1.txt
 )
 model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperature_1
 
@@ -128,8 +178,8 @@ model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperatu
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
         --data $data/creature \
         --words 100 \
-        --checkpoint $alt_models/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05.pt \
-        --outf $alt_samples/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperature_1.txt
+        --checkpoint $models/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05.pt \
+        --outf $samples/model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperature_1.txt
 )
 model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperature_1
 
@@ -138,8 +188,8 @@ model_epochs_30_logint_75_emsize_150_nhid_150_drop_05_sample_words_100_temperatu
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
         --data $data/creature \
         --words 100 \
-        --checkpoint $alt_models/model_epochs_25_logint_75_emsize_100_nhid_100_drop_05.pt \
-        --outf $alt_samples/model_epochs_25_logint_75_emsize_100_nhid_100_drop_05_sample_words_100_temperature_1.txt
+        --checkpoint $models/model_epochs_25_logint_75_emsize_100_nhid_100_drop_05.pt \
+        --outf $samples/model_epochs_25_logint_75_emsize_100_nhid_100_drop_05_sample_words_100_temperature_1.txt
 )
 model_epochs_25_logint_75_emsize_100_nhid_100_drop_05_sample_words_100_temperature_1
 
@@ -148,8 +198,8 @@ model_epochs_25_logint_75_emsize_100_nhid_100_drop_05_sample_words_100_temperatu
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
         --data $data/creature \
         --words 100 \
-        --checkpoint $alt_models/model_epochs_20_logint_50_emsize_100_nhid_100_drop_05.pt \
-        --outf $alt_samples/model_epochs_20_logint_50_emsize_100_nhid_100_drop_05_sample_words_100_temperature_1.txt
+        --checkpoint $models/model_epochs_20_logint_50_emsize_100_nhid_100_drop_05.pt \
+        --outf $samples/model_epochs_20_logint_50_emsize_100_nhid_100_drop_05_sample_words_100_temperature_1.txt
 )
 model_epochs_20_logint_50_emsize_100_nhid_100_drop_05_sample_words_100_temperature_1
 
@@ -158,7 +208,8 @@ model_epochs_20_logint_50_emsize_100_nhid_100_drop_05_sample_words_100_temperatu
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python generate.py \
         --data $data/creature \
         --words 100 \
-        --checkpoint $alt_models/model_epochs_5_logint_61_emsize_20_nhid_20_drop_05.pt \
-        --outf $alt_samples/model_epochs_5_logint_61_emsize_20_nhid_20_drop_05_sample_words_100_temperature_1.txt
+        --checkpoint $models/model_epochs_5_logint_61_emsize_20_nhid_20_drop_05.pt \
+        --outf $samples/model_epochs_5_logint_61_emsize_20_nhid_20_drop_05_sample_words_100_temperature_1.txt
 )
 model_epochs_5_logint_61_emsize_20_nhid_20_drop_05_sample_words_100_temperature_1
+Task1
