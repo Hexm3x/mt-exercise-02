@@ -74,7 +74,12 @@ alt_samples (with the files that got generated after "./scripts/generate.sh" was
 
 Task 2:
 I made changes in:
-main.py, train.sh, generate.sh, install_packages.sh, generate.sh (working on subtask)
+- main.py
+- train.sh
+- generate.sh
+- install_packages.sh
+- generate.sh
+(working on subtask)
 
 I created:
 Task_2_models (with the .pt files) - I manually created that folder and manually put the files in there as the train.sh did not start (or takes too much more time to start).
@@ -83,16 +88,34 @@ Log_Perplexities with the files for each kind of perplexity (in .log files - do 
 visualization.py in the root folder (which outputs a folder "Log_Perplexities_Linecharts" with 3 .png files in it - it does not look correct as I cannot interpret it.)
 Task_2_samples (with the generated text samples) - as this command generates the folder, I assume that the other folders / directory (which I made manually / replaced manually) could have been created as well, but my computer was having troubles with generating these folders as it took even longer to get the code done.
 
-# Download (Task 2 - run ./scripts/install_packages.sh)
-pandas (pip install pandas)
-matplotlib (pip install -U matplotlib --prefer-binary)
+# Download (Task 2)
+
+You can either run
+
+./scripts/install_packages.sh
+
+or you can download them seperately:
+
+pandas:
+
+pip install pandas
+
+matplotlib:
+
+pip install -U matplotlib --prefer-binary
 
 # Steps get to the results of task 2 (assuming that task 1 has been run before / files from task 1 exists)
+
 ./scripts/install_packages.sh
-./scripts/train.sh (assuming that main.py is in "tools/pytorch-examples/word_language_model")
+
+./scripts/train.sh
+
+(assuming that main.py is in "tools/pytorch-examples/word_language_model")
 Manually make a folder in "./mt-exercise-2" called "Task_2_models", put in the generated .pt files (located in "tools/pytorch-examples/word_language_model")
 Manually put the folder called "Log_Perplexities" in "./mt-exercise-2" (the folder is located in "tools/pytorch-examples/word_language_model")
+
 python3 visualization.py Log_Perplexities
+
 ./scripts/generate.sh
 
-For further understanding and explainations, please look at the codes (especially main.py and visualization.py) and the .pdf file
+For further understanding and explainations, please look at the codes (especially main.py and visualization.py).
