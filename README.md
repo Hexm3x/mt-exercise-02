@@ -92,30 +92,31 @@ Task_2_samples (with the generated text samples) - as this command generates the
 
 You can either run
 
-./scripts/install_packages.sh
+`./scripts/install_packages.sh`
 
 or you can download them seperately:
 
 pandas:
 
-pip install pandas
+`pip install pandas`
 
 matplotlib:
 
-pip install -U matplotlib --prefer-binary
+`pip install -U matplotlib --prefer-binary`
 
 # Steps get to the results of task 2 (assuming that task 1 has been run before / files from task 1 exists)
 
-./scripts/install_packages.sh
+`./scripts/install_packages.sh`
 
-./scripts/train.sh
+`./scripts/train.sh`
 
 (assuming that main.py is in "tools/pytorch-examples/word_language_model")
+
 Manually make a folder in "./mt-exercise-2" called "Task_2_models", put in the generated .pt files (located in "tools/pytorch-examples/word_language_model")
 Manually put the folder called "Log_Perplexities" in "./mt-exercise-2" (the folder is located in "tools/pytorch-examples/word_language_model")
 
-python3 visualization.py Log_Perplexities
+`python3 visualization.py Log_Perplexities`
 
-./scripts/generate.sh
+`./scripts/generate.sh`
 
 For further understanding and explainations, please look at the codes (especially main.py and visualization.py).
