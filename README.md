@@ -42,11 +42,11 @@ Generate (sample) some text from a trained model with:
     ./scripts/generate.sh
 
 # Problems and Solutions
-Task 1:
+**Task 1**:
 While using the scripts, I encountered an unpickling error while loading the "./scripts.train" as it did not show the end result of the training (in the train script) even though it went through all epochs. 
 To solve this problem, I had to change line 254 in the main.py ("model = torch.load(f)" to "model = torch.load(f, weights_only=False)") and I had to change line 56 in generate.py ("model = torch.load(f, map_location=device)" to "model = torch.load(f, map_location=device, weights_only=False)")
 
-Task 2:
+**Task 2**:
 I do not know how to do the table as it was shown in the example. I thought it would be alright if the tables are switched (header = perplexity | Epoch), as the epochs always stay the same. With this approach, I can add all ppl in a single row. A new row is created after each run. With this, it is possible to store all different dropout from all language model in a single ppl file (there are 3 files, for each kind of perplexity).
 Rows are seperated with "-" the columns are seperated with "|". For a beautiful output, the visualisation.py should be considered.
 
@@ -59,8 +59,10 @@ My laptop takes a lot of time to train, so I only did 4 different dropout values
 
 I have problems with the visualization.py, as the output is not interpretable for me (I think the issue is, that the .log files are sorted differently then what the plt expects and df.transpose() did not do the trick). I moved on with this problem, as for the task itself looking at the .log file (aka the tables) and the faulty linecharts are good enough for me to compare the models (although it is not the best of course).
 
+I had problems with git, I uploaded everything with the github website (and modify this README.md with the online editor). I did not have any problems in Task 1 regarding git. (and I realized that I uploaded everything to main - well, so be it...)
+
 # Changes
-Task 1:
+**Task 1**:
 I made changes in:
 main.py, generate.py (due to errors)
 download_data.sh train.sh, generate.sh (working on subtasks, downloading the file that I want, training on it with different values, generating with different values - these different values are sometimes commented out, if not mandatorily needed - please check the comments for further explanation)
@@ -72,7 +74,7 @@ samples (with the files that got generated after "./scripts/generate.sh" was run
 alt_models (with the files that got generated after "./scripts/train.sh" was run and were not necessary - for my own, to understand the code a bit better - I made the folder manually and manually took in all files)
 alt_samples (with the files that got generated after "./scripts/generate.sh" was run and were not necessary - for my own, to understand the code a bit better - I made the folder manually and manually took in all files)
 
-Task 2:
+**Task 2**:
 I made changes in:
 - main.py
 - train.sh
